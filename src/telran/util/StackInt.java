@@ -1,7 +1,6 @@
 package telran.util;
 
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 
 public class StackInt {
 	private LinkedList<Integer> list;
@@ -33,8 +32,6 @@ public class StackInt {
 	}
 	
 	public int getMax() {
-		//returns maximal value of the stack or throws NoSuchElementException
-		//if the stack is empty
 		return maxList.getFirst();
 	}
 }
