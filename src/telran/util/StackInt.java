@@ -19,11 +19,10 @@ public class StackInt {
 	}
 
 	public int pop() {
-		Integer res = list.getFirst();
+		Integer res = list.removeFirst();
 		if (res == maxList.getFirst()) {
 			maxList.removeFirst();
 		}
-		list.removeFirst();
 		return res;
 	}
 
