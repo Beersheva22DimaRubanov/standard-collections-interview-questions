@@ -5,32 +5,32 @@ import java.util.LinkedList;
 public class StackInt {
 	private LinkedList<Integer> list;
 	private LinkedList<Integer> maxList;
-	
+
 	public StackInt() {
 		this.list = new LinkedList<>();
 		this.maxList = new LinkedList<>();
 	}
 
 	public void push(int num) {
-		int max = num;
-		if(!maxList.isEmpty() && max < maxList.getFirst()) {
-			max = maxList.getFirst();
+		if (maxList.isEmpty() || num >= maxList.getFirst()) {
+			maxList.addFirst(num);
 		}
 		list.addFirst(num);
-		maxList.addFirst(max);
 	}
-	
+
 	public int pop() {
-			Integer res = list.getFirst();
-			list.removeFirst();
+		Integer res = list.getFirst();
+		if (res == maxList.getFirst()) {
 			maxList.removeFirst();
-			return res;
+		}
+		list.removeFirst();
+		return res;
 	}
-	
-	public boolean isEmpty()  {
+
+	public boolean isEmpty() {
 		return list.isEmpty();
 	}
-	
+
 	public int getMax() {
 		return maxList.getFirst();
 	}
