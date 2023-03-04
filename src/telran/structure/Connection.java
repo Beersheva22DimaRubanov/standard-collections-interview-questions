@@ -1,4 +1,4 @@
-package telran.util;
+package telran.structure;
 
 public class Connection {
 	int id;
